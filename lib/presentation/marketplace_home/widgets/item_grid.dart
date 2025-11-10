@@ -92,43 +92,12 @@ class ItemGrid extends StatelessWidget {
               child: ClipRRect(
                 borderRadius:
                     const BorderRadius.vertical(top: Radius.circular(8)),
-                child: Stack(
-                  children: [
-                    CustomImageWidget(
-                      imageUrl: item['image'] as String,
-                      width: double.infinity,
-                      height: double.infinity,
-                      fit: BoxFit.cover,
-                      semanticLabel: item['semanticLabel'] as String,
-                    ),
-                    Positioned(
-                      top: 1.h,
-                      right: 2.w,
-                      child: GestureDetector(
-                        onTap: () {
-                          // Toggle favorite
-                        },
-                        child: Container(
-                          padding: EdgeInsets.all(1.w),
-                          decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.9),
-                            shape: BoxShape.circle,
-                          ),
-                          child: CustomIconWidget(
-                            iconName: item['isFavorite'] == true
-                                ? 'favorite'
-                                : 'favorite_border',
-                            color: item['isFavorite'] == true
-                                ? AppTheme.errorLight
-                                : Theme.of(context)
-                                    .colorScheme
-                                    .onSurfaceVariant,
-                            size: 16,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+                child: CustomImageWidget(
+                  imageUrl: item['image'] as String,
+                  width: double.infinity,
+                  height: double.infinity,
+                  fit: BoxFit.cover,
+                  semanticLabel: item['semanticLabel'] as String,
                 ),
               ),
             ),
